@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://jamesonline01.github.io/sitemap.xml
+Sitemap: https://www.djravenscroft.com/sitemap.xml
