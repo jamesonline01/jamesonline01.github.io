@@ -1,0 +1,1408 @@
+/*Sections are clearly grouped: Theme, Layout, Typography, Nav, Main, Footer, Hero, 
+Buttons, Specials (404).*/
+
+/* ==========================
+   THEME COLORS & ROOT VARS
+   ========================== */
+:root {
+  --background-color: #0D0D0D;
+  --main-dark: #1A202C;
+  --accent-color: #C53030;
+  --accent-secondary: #FF7849;
+  --text-color: #E5E5E5;
+  --text-secondary: #A0AEC0;
+  --borders: #CBD5E0;
+  --header-color: #FBBF24;
+  --error-color: #991B1B;
+}
+
+/* ==========================
+   GLOBAL PAGE LAYOUT
+   ========================== */
+html {
+  overflow-y: scroll;            /* Prevents layout shift due to scrollbar */
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-color) !important;
+  background: rgba(18,18,18,0.92);     /* Slight overlay for frame effect */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: var(--text-color) !important;
+  font-family: 'Open Sans', sans-serif !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+  height: 100%;
+  min-height: 100vh;
+}
+
+/* ==========================
+   CORE STRUCTURE & CONTAINERS
+   ========================== */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-container {
+  max-width: 1200px;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-image: url('/images/background-texture.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0;                /* Or 18px for softer edges */
+  box-shadow: 0 0 40px 0 rgba(0,0,0,0.12);
+  box-sizing: border-box;
+  /* Uncomment for boxed side borders:
+  border-left: 2px solid var(--borders);
+  border-right: 2px solid var(--borders); */
+  /* Optional horizontal padding:
+  padding-left: 2rem;
+  padding-right: 2rem; */
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 2rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.section {
+  margin-top: 2rem;
+  padding: 2rem !important;
+}
+
+/* ==========================
+   TYPOGRAPHY & LINKS
+   ========================== */
+h1, h2, h3, h4, h5 {
+  font-family: 'Vollkorn', serif !important;
+  color: var(--header-color) !important;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* Fantasy glow */
+  letter-spacing: 0.02em;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent-secondary);
+}
+
+/* ==========================
+   HEADER & NAVIGATION
+   ========================== */
+header {
+  background-color: var(--main-dark) !important;
+  border-top: 1px solid var(--borders);
+  border-bottom: 1px solid var(--borders) !important;
+}
+
+.site-header {
+  font-size: 2rem;
+  font-family: 'Vollkorn', serif;
+  font-weight: bold;
+  color: var(--header-color) !important;
+}
+
+.site-header a {
+  color: var(--header-color) !important;
+  font-family: 'Vollkorn', serif;
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+header .site-nav {
+  background-color: var(--main-dark) !important;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem !important;
+}
+
+header nav a {
+  color: var(--accent-color) !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+header nav a:hover {
+  color: var(--accent-secondary) !important;
+}
+
+nav a.active {
+  color: var(--accent-secondary) !important;
+  /* text-decoration: underline; */
+  font-weight: bold;
+  /* Add glow, border, or other fantasy effect if desired */
+  /* text-shadow: 0 0 8px #ffd34e80; */
+  transition: color 0.2s;
+}
+
+
+/* ==========================
+   MAIN CONTENT AREA
+   ========================== */
+main {
+  width: 100%;
+  padding: 2rem 4rem;
+  box-sizing: border-box;      /* Ensures padding is included in width calculation */
+  flex: 1 0 auto;              /* Allows main content to grow and push footer down */
+  /*
+  background: rgba(18,18,18,0.8);  /* Slight overlay for contrast *
+  border-radius: 18px;
+  box-shadow: 0 0 30px 4px rgba(0,0,0,0.15);
+  border-left: 1px solid var(--borders);
+  border-right: 1px solid var(--borders);
+  */
+}
+
+/* ==========================
+   HERO SECTION
+   ========================== */
+.hero {
+  background: rgba(0,0,0,0.5);
+  padding: 5rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--borders);
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  color: var(--header-color);
+}
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+.hero .button {
+  font-size: 1.2rem;
+}
+
+/* === 2nd attempt - HERO BANNER BACKGROUND === - using for hero section and blog */
+.hero-section {
+  position: relative;
+  background: url('/images/hero-main1e.png') center center/cover no-repeat;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.hero-section .hero-content {
+  position: relative;
+  z-index: 2;
+/*background: rgba(20, 20, 20, 0.1);*/
+  padding: 2rem 2.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+.hero-section::before {
+  /* optional: overlays the texture for mood */
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('/images/background-texture.png') center center/cover repeat;
+  opacity: 0.4;  /*overlay can become darker with higher value*/
+  z-index: 1;
+}
+
+/* ==========================
+   BUTTONS
+   ========================== */
+button, .button {
+  background-color: var(--accent-color);
+  border: none;
+  padding: 0.5rem 1rem; 
+  color: white;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  transition: background 0.3s;
+}
+button:hover, .button:hover {
+  background-color: var(--accent-secondary);
+  color: white;
+  box-shadow: 0 0 8px rgba(255, 120, 73, 0.6);
+}
+
+/* ==========================
+   FOOTER
+   ========================== */
+footer {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 1.2rem 0 !important;
+  background: none; /* Already handled by .site-container */
+  background-color: var(--main-dark) !important;
+  border-top: 1px solid var(--borders);
+  border-bottom: 1px solid var(--borders) !important;
+}
+.site-header, main, footer {
+  width: 100%;
+}
+
+/* ==========================
+   404 PAGE STYLING
+   ========================== */
+.notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.notfound h1 {
+  color: var(--header-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.notfound p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================
+   SOCIALS SECTION
+   ========================== */
+.socials-section {
+    width: 100%;
+    padding: 2rem 0 2rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.socials-section h2 {
+    font-family: 'Vollkorn', serif;
+    color: var(--header-color);
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.05em;
+    text-shadow: 2px 2px 10px #ff784995, 0 0 8px #000b;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    display: inline-flex;
+    transition: transform 0.25s, box-shadow 0.25s;
+    border-radius: 50%;
+    box-shadow: 0 0 8px 2px #c53030aa, 0 0 2px #000c;
+    filter: drop-shadow(0 0 4px #a0aec0cc);
+    background: none;
+}
+
+.social-icons a:hover {
+    transform: scale(1.18) rotate(-4deg);
+    box-shadow: 0 0 18px 4px var(--accent-secondary), 0 0 8px #000b;
+    z-index: 1;
+}
+
+/* SVGs are already brand colored, but make sure they glow: */
+.social-icons svg {
+    display: block;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    box-shadow: 0 0 6px 2px #fff5, 0 0 12px 3px #c5303040;
+}
+
+/* Responsive: icons shrink and space out more tightly */
+@media (max-width: 767px) {
+    .social-icons {
+        gap: 1.3rem;
+    }
+    .socials-section h2 {
+        font-size: 1.25rem;
+    }
+    .social-icons svg {
+        width: 32px;
+        height: 32px;
+    }
+    .socials-section {
+        padding: 1rem 0 0.3rem 0;
+    }
+}
+
+/* =======================================================
+   SIGNUP / NEWSLETTER FORM (FORMKIT)
+======================================================= */
+/* Example for Kit embedded forms – adjust class names if needed */
+.signup-section {
+  padding: 2.5rem 0 1.2rem 0;
+  text-align: center;
+  padding-bottom: 0.2rem;
+  background: rgba(0,0,0,0.5); /* Subtle fantasy glow */
+  /* rounded border + red borders 
+  border-radius: 14px;
+  box-shadow: 0 0 18px 4px #ff784965, 0 0 8px #000b;
+  */
+
+  /*
+  margin-bottom: 2rem;
+  border-top: 1px solid var(--borders);
+  */
+}
+
+.signup-section h2 {
+  font-family: 'Vollkorn', serif;
+  color: var(--header-color);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+  text-shadow: 2px 2px 10px #c5303085;
+}
+
+.signup-section p {
+  color: var(--text-color);
+  margin-bottom: 1.7rem;
+}
+
+/* Email input and button styles */
+.signup-section input[type="email"] {
+  padding: 0.7em;
+  font-size: 1.08rem;
+  border-radius: 7px 0 0 7px;
+  border: 1px solid var(--accent-color);
+  background: #141821;
+  color: var(--text-color);
+}
+
+/* Submit button */
+.signup-section button,
+.signup-section input[type="submit"] {
+  background: var(--accent-color);
+  color: #fff;
+  font-size: 1.12rem;
+  padding: 0.7em 1.5em;
+  border: none;
+  border-radius: 0 7px 7px 0;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 10px 2px #c5303070;
+}
+.signup-section button:hover,
+.signup-section input[type="submit"]:hover {
+  background: var(--accent-secondary);
+  box-shadow: 0 0 14px 3px #ff784965;
+}
+
+.signup-section small {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-top: 0.8em;
+}
+
+/* --- Magical Signup Form Styling Override for Kit --- */
+/* Horizontally aligned magical newsletter form */
+.signup-section .formkit-form[data-uid] {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 800px;
+  background: rgba(20, 18, 30, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 0 22px 6px #c5303036, 0 0 80px 0 #ff78493a;
+  padding: 2rem 1rem;
+  border-top: 2px solid var(--accent-secondary);
+  border-bottom: 2px solid var(--accent-secondary);
+}
+
+.signup-section .formkit-fields {
+  width: 100%;
+  display: flex !important;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  margin: 0 auto 0.6rem auto;
+  box-shadow: none;
+}
+
+.signup-section .formkit-field {
+  flex: 1 1 auto;
+  margin: 0;
+  min-width: 0;
+}
+
+.signup-section .formkit-input[type="email"] {
+  width: 100%;
+  background: #191622 !important;
+  color: var(--text-color) !important;
+  border: 2px solid var(--header-color) !important;
+  border-right: none !important;
+  border-radius: 10px 0 0 10px !important;
+  padding: 0.9em 1.2em !important;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.15rem;
+  box-shadow: 0 0 10px #fff3, 0 0 0 #0000;
+  transition: box-shadow 0.25s, border 0.25s;
+  min-width: 0;
+}
+
+.signup-section .formkit-input[type="email"]:focus {
+  outline: none !important;
+  border-color: var(--accent-secondary) !important;
+  box-shadow: 0 0 16px 4px #fbbf247a, 0 0 0 #0000;
+}
+
+.signup-section .formkit-submit {
+  border-radius: 0 10px 10px 0 !important;
+  border: 2px solid var(--header-color);
+  border-left: none;
+  background: linear-gradient(90deg, var(--accent-color) 60%, var(--accent-secondary) 100%);
+  color: #fff !important;
+  font-size: 1.18rem;
+  font-family: 'Vollkorn', serif;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  padding: 0 2.2em;
+  box-shadow: 0 0 14px 2px #ff784955, 0 0 12px 0 #c5303040;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.22s, box-shadow 0.22s, color 0.22s;
+  min-width: 140px;
+}
+
+.signup-section .formkit-submit:hover,
+.signup-section .formkit-submit:focus {
+  background: linear-gradient(90deg, var(--accent-secondary) 0%, var(--accent-color) 80%);
+  color: #fbbf24 !important;
+  box-shadow: 0 0 30px 8px #ff784995, 0 0 16px 0 #c5303080;
+  outline: none;
+}
+
+.signup-section .signup-highlight {
+  display: block;
+  margin-top: 0.5em;
+  color: var(--header-color);
+  font-size: 1.16em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-shadow: 0 0 8px #fbbf2455, 0 1px 0 #0009;
+  font-family: 'Vollkorn', serif;
+}
+
+
+/* Placeholder styling */
+.signup-section .formkit-input::placeholder {
+  color: #e5e5e599 !important;
+  opacity: 1;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+/* Success message styling */
+.signup-section .formkit-alert-success {
+  font-family: 'Vollkorn', serif;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 0 16px 3px #fbbf247a;
+  font-size: 1.13em;
+  text-align: center;
+}
+
+.signup-section .formkit-alert-error {
+  color: #ea4110 !important;
+}
+
+/* Responsive: Stack vertically on mobile */
+@media (max-width: 767px) {
+
+  .signup-section {
+    padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+  }
+
+  .signup-section .formkit-form[data-uid] {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 800px;
+    background: rgba(20, 18, 30, 0.8);
+    border-radius: 0px; 
+    box-shadow: 0 0 22px 6px #c5303036, 0 0 80px 0 #ff78493a;
+    padding: auto !important;
+    border-top: 2px solid var(--accent-secondary);
+    border-bottom: 2px solid var(--accent-secondary);
+  }
+
+  .signup-section .formkit-fields {
+    flex-direction: column !important;
+    gap: 0.7rem;
+  }
+  .signup-section .formkit-input[type="email"] {
+    border-radius: 10px !important;
+    border-right: 2px solid var(--header-color) !important;
+    border-left: 2px solid var(--header-color) !important;
+    margin-bottom: 0;
+  }
+  .signup-section .formkit-submit {
+    border-radius: 10px !important;
+    border-top: none;
+    border-left: 2px solid var(--header-color) !important;
+    border-right: 2px solid var(--header-color) !important;
+    width: 100%;
+    min-width: unset;
+    padding: auto !important;
+  }
+  .signup-section .formkit-form[data-uid] {
+    padding: 1rem 0.3rem;
+  }
+
+  /* New code Gemini 2.5 Flash*/
+  /* ConvertKit Form Overrides */
+  .signup-form-container {
+      display: flex;
+      justify-content: center;
+      width: 100%; /* Ensure it takes full width of its parent */
+      max-width: 600px; /* Max width for the form container */
+      margin: 0 auto; /* Center the form container */
+  }
+
+  .signup-form-container .formkit-form {
+      width: 100%; /* Make the ConvertKit form itself take full width of its wrapper */
+      display: flex; /* Use flexbox for form layout */
+      flex-direction: column; /* Stack fields by default (mobile first) */
+      gap: 15px; /* Spacing between fields */
+      padding: 20px; /* Internal padding for the form */
+      background-color: var(--background-color); /* Light background for the form area */
+      border-radius: 8px; /* Rounded corners for the form */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .signup-form-container .formkit-field {
+      flex-grow: 1; /* Allow fields to grow */
+      width: 100%; /* Ensure input field takes full width */
+  }
+
+  .signup-form-container .formkit-input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--borders);
+      border-radius: 5px;
+      font-size: 1rem;
+      color: var(--text-color);
+      background-color: var(--main-dark); /* Match input background to your theme */
+  }
+
+  .signup-form-container .formkit-input::placeholder {
+      color: var(--text-secondary);
+  }
+
+  .signup-form-container .formkit-submit {
+      width: 100%;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      background-color: var(--accent-color); /* Use your accent color */
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+
+  .signup-form-container .formkit-submit:hover {
+      background-color: var(--accent-secondary); /* Darker shade on hover */
+  }
+
+  .signup-section .signup-highlight {
+    font-size: medium;
+    font-weight: normal;
+  }
+
+  /* Not applied
+  .signup-form-container .formkit-form {
+    padding: 30px 10px 10px;
+  }
+  */
+
+}
+
+/* Desktop styles for form fields (side-by-side) 
+@media (min-width: 768px) {
+    .signup-form-container .formkit-form {
+        flex-direction: row; /* Layout fields side-by-side on larger screens *
+        align-items: flex-end; /* Align items to the bottom *
+    }
+
+    .signup-form-container .formkit-field {
+        margin-bottom: 0; /* Remove default margin that might cause issues *
+    }
+
+    .signup-form-container .formkit-submit {
+        width: auto; /* Allow button to size naturally based on content *
+        flex-shrink: 0; /* Prevent button from shrinking *
+    }
+} */
+
+/* =======================================================
+   BLOG LISTING & CARD STYLES
+======================================================= */
+.blog-list-container {
+  max-width: 720px;
+  margin: 2rem auto;
+  background: transparent;
+  border-radius: 10px;
+}
+
+.blog-list-tabs {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.blog-list-tabs .tab {
+  background: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-weight: bold;
+  color: #222;
+  cursor: pointer;
+  margin-right: 0.2rem;
+  transition: background 0.2s;
+}
+
+.blog-list-tabs .tab.active {
+  background: #fff;
+  color: #d32a2a;
+}
+
+.blog-list-search {
+  margin-left: auto;
+}
+
+.blog-list-search input {
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.blog-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 1.6rem 0;
+  gap: 2rem;
+}
+
+.blog-list-item-main {
+  flex: 1 1 65%;
+}
+
+.blog-list-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #222;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.blog-list-title:hover {
+  color: #d32a2a;
+}
+
+.blog-list-meta,
+.blog-list-submeta {
+  font-size: 0.95rem;
+  color: #888;
+  margin-top: 0.1rem;
+}
+
+.blog-list-thumb img {
+  max-width: 110px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px #0002;
+}
+
+/*Anything that's up, is it really needed? - to test it without*/
+
+.blog-index-title {
+  font-size: 2.2em;
+  margin-bottom: 0.25em;
+  color: var(--header-color, #FFD246);
+  letter-spacing: 0.01em;
+}
+.blog-index-summary {
+  color: var(--text-secondary, #d2cfae);
+  font-size: 1.18em;
+  margin-bottom: 2.6em;
+  margin-top: 0.3em;
+}
+.blog-list-substack {
+  max-width: 750px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+/* Card layout */
+.substack-card {
+  display: flex;
+  align-items: stretch;
+  gap: 2.4em;
+  padding: 2em 2em 2em 1.2em;
+  margin-bottom: 2.2em;
+  border-radius: 18px;
+  background: rgba(34,32,24,0.55);
+  border: 1.5px solid #23201a;
+  box-shadow: 0 2px 16px #19161015;
+  text-decoration: none;
+  transition: box-shadow 0.18s, background 0.18s;
+  position: relative;
+}
+.substack-card:hover {
+  background: rgba(44,41,32,0.93);
+  box-shadow: 0 4px 32px #FFD24644;
+  text-decoration: none;
+}
+
+/* Main content column */
+.substack-main {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.substack-meta {
+  margin-bottom: 0.07em;
+}
+
+.substack-date {
+  color: #a9a7a7;
+  font-size: 0.97em;
+  font-family: 'Vollkorn', serif;
+  font-weight: 500;
+  margin-bottom: 0.3em;
+  display: block;
+}
+
+.substack-title {
+  font-size: 1.43em;
+  font-weight: bold;
+  color: #FFD246;
+  margin-bottom: 0.2em;
+  letter-spacing: 0.01em;
+  font-family: 'Vollkorn', serif;
+  transition: color 0.18s;
+  text-align: left;
+}
+
+.substack-card:hover .substack-title {
+  color: #fffad1;
+  text-decoration: underline;
+}
+.substack-subtitle {
+  color: #e8d69b;
+  font-size: 1.09em;
+  margin-bottom: 0.7em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  text-align: left;
+}
+
+/* Meta info row */
+.substack-meta {
+  color: #bab9a6;
+  font-size: 0.97em;
+  margin-top: auto;
+  margin-bottom: 0.3em;
+  font-family: 'Vollkorn', serif;
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.substack-date {
+  font-weight: 500;
+  font-size: 1em;
+}
+.substack-tags {
+  display: inline-flex;
+  gap: 0.3em;
+  margin-left: 0.5em;
+}
+.substack-tag {
+  background: #312e25;
+  color: #FFD246;
+  border-radius: 4px;
+  font-size: 0.88em;
+  padding: 2px 7px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Blog card thumbnail */
+.substack-thumb {
+  width: 175px;
+  min-width: 120px;
+  max-width: 230px;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #15151223;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  background: #191818;
+}
+.substack-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Responsive for blog cards */
+@media (max-width: 950px) {
+  .substack-card {
+    gap: 1.1em;
+    padding: 1.1em 0.8em 1.2em 0.8em;
+  }
+  .substack-thumb {
+    width: 110px;
+    min-width: 90px;
+    max-width: 140px;
+  }
+}
+@media (max-width: 700px) {
+  .substack-card {
+    flex-direction: column;
+    gap: 0.6em;
+    align-items: stretch;
+    padding: 1.2em 0.5em 1.6em 0.5em;
+  }
+  .substack-thumb {
+    width: 100%;
+    max-width: 100vw;
+    min-width: 0;
+    height: 160px;
+    aspect-ratio: 3/2;
+    margin-top: 1em;
+    margin-bottom: 0.2em;
+    border-radius: 10px;
+  }
+}
+
+/* =======================================================
+   SINGLE BLOG POST
+======================================================= */
+.blog-single {
+  max-width: 720px;
+  margin: 0 auto 5rem auto;
+  padding: 2.5rem 1.7rem 2.5rem 1.7rem;
+  background: none;
+  border-radius: 12px;
+}
+
+.blog-single-title {
+  font-size: 2.4em;
+  color: #FFD246;
+  font-family: 'Vollkorn', serif;
+  margin-bottom: 0.2em;
+  line-height: 1.12;
+}
+
+.blog-single-subtitle {
+  color: #e8d69b;
+  font-size: 1.28em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 1.3em;
+  margin-top: 0.0em;
+  font-weight: 400;
+}
+
+.blog-single-meta {
+  color: #a9a7a7;
+  font-size: 1.02em;
+  margin-bottom: 2.1em;
+  font-family: 'Vollkorn', serif;
+}
+
+.blog-single-body {
+  font-size: 1.16em;
+  line-height: 1.77;
+  color: #ece8d9;
+  margin-top: 1.2em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+@media (max-width: 800px) {
+  .blog-single {
+    padding: 1.2rem 0.3rem;
+  }
+}
+
+/* =======================================================
+   GENERAL IMAGE STYLES
+======================================================= */
+.img-cover {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 40px 0 rgba(0,0,0,0.18);
+}
+
+.section-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-texture {
+    background-image: url('/images/background-texture.png');
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.82;
+}
+
+.books-cover {
+    max-width: 330px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 32px 0 rgba(0,0,0,0.19);
+    margin-right: 2.5rem;
+}
+
+/* =======================================================
+   ABOUT PAGE
+======================================================= */
+.about-bg-motif {
+    background: url('/images/about-banner.jpeg') center center/cover no-repeat;
+    padding: 40px 0;
+}
+
+.about-portrait-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+}
+
+.about-portrait {
+    width: 320px;
+    min-width: 240px;
+    max-width: 380px;
+    border-radius: 16px;
+    box-shadow: 0 6px 36px rgba(30,30,40,0.26);
+}
+
+/* Responsive for about/portrait/book */
+@media (max-width: 900px) {
+    .about-portrait-wrap {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-portrait {
+        margin-bottom: 1.5rem;
+    }
+    .books-cover {
+        margin: 0 auto 2rem auto;
+        display: block;
+    }
+}
+
+/* =======================================================
+   BANNERS & SPECIAL IMAGES
+======================================================= */
+/* Blog, Contact, 404 banners */
+.banner-img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 2rem;
+}
+.contact-img {
+    width: 100%;
+    max-width: 540px;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px 0 rgba(40,40,80,0.13);
+    margin: 0 auto 2rem auto;
+    display: block;
+}
+
+/* Blog banner for list page */
+/* === BLOG PAGE BANNER === */
+.blog-banner-img {
+  width: 100%;
+  height: 450px;
+  /*
+  //max-width: 1200px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin: 0 auto 2rem auto;
+  display: block;
+  */
+  background-size: cover;
+  border-radius: 18px;
+}
+
+.not-found-banner-img {
+  display: block;
+  margin: 2.5rem auto;
+  max-width: 500px;
+}
+
+.blogpost-banner-img {
+  max-width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin: 0 auto 2.5rem auto;
+  display: block;
+}
+
+/* === CONTACT PAGE IMAGE === */
+.contact-banner-img {
+  width: 600px;
+  max-width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin: 0 auto 2.5rem auto;
+  display: block;
+}
+
+/* === SECTION BACKGROUND TEXTURE (General) === */
+.section-bg-texture {
+  background: url('/images/background-texture.png') center center/cover repeat;
+  opacity: 0.95;
+}
+
+/* Responsive Tweak: stack images on mobile */
+@media (max-width: 900px) {
+  .about-flex, .book-section-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .about-author-img, .book-cover-img {
+    margin: 0 0 2rem 0;
+  }
+}
+
+@media (max-width: 667px) {
+  .blog-banner-img {
+    height: 350px;
+  }
+}
+
+/* === BOOK COVER (HOME & BOOKS) === */
+.book-cover-img {
+  width: 240px;
+  max-width: 100%;
+  height: 320px;
+  object-fit: cover;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.30);
+  border-radius: 12px;
+  margin-right: 2.5rem;
+  background: #222;
+}
+.book-section-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+
+/* === ABOUT PAGE LAYOUT === */
+.about-banner-bg {
+  width: 100%;
+  min-height: 240px;
+  background: url('/images/about-banner.jpeg') center center/cover no-repeat;
+  border-radius: 18px;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.about-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+.about-author-img {
+  width: 240px;
+  max-width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px 0 rgba(0,0,0,0.23);
+  margin-right: 2.5rem;
+  background: #222;
+}
+.about-text {
+  flex: 1;
+}
+
+@media (max-width: 667px) {
+  .about-text {
+    padding: 1.2rem 1.2rem 1.2rem 1.2rem;  /*Used in contact / about page.html*/
+  }
+}
+
+/* =======================================================
+   BOOK PAGE (3rd ATTEMPT)
+======================================================= */
+.book-highlight-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 0 0 0;
+}
+.book-cover img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px #0008;
+}
+.book-info {
+    flex: 1;
+}
+@media (max-width: 900px) {
+    .book-highlight-content { flex-direction: column; align-items: center; }
+    .book-cover img { max-width: 220px; }
+}
+
+/* =======================================================
+   ABOUT PAGE (3rd ATTEMPT)
+======================================================= */
+.about-portrait-row {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    margin: 48px 0 0 0;
+}
+.about-portrait {
+    max-width: 280px;
+    width: 100%;
+    border-radius: 2em;
+    box-shadow: 0 4px 32px #0007;
+}
+.about-text {
+    flex: 1;
+}
+@media (max-width: 900px) {
+    .about-portrait-row { flex-direction: column; gap: 20px; align-items: center; }
+    .about-portrait { max-width: 180px; }
+    .about-text { text-align: center; }
+}
+
+/* =================================
+   HEADER & MOBILE NAVIGATION
+   ================================= */
+
+.site-header-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  height: 64px;
+  padding: 0 1.5rem;
+}
+
+.site-branding {
+  font-size: 1.5rem;
+  font-family: 'Vollkorn', serif;
+  font-weight: bold;
+  color: var(--header-color) !important;
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.site-nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.6rem;
+  cursor: pointer;
+  z-index: 1002;
+  order: -1;
+}
+.hamburger, .hamburger:before, .hamburger:after {
+  display: block;
+  width: 28px;
+  height: 3.5px;
+  background: var(--header-color);
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.35s ease;
+}
+.hamburger:before,
+.hamburger:after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+.hamburger:before { top: -10px; }
+.hamburger:after { top: 10px; }
+
+.mobile-menu-toggle.open .hamburger { background: transparent; }
+.mobile-menu-toggle.open .hamburger:before { transform: rotate(45deg) translate(5px, 5px); }
+.mobile-menu-toggle.open .hamburger:after { transform: rotate(-45deg) translate(5px, -5px); }
+
+.mobile-nav {
+  display: block;
+  position: fixed;
+  top: 0; left: -310px;
+  width: 280px;
+  height: 100vh;
+  background: var(--main-dark);
+  box-shadow: 2px 0 20px #000c;
+  z-index: 1003;
+  padding: 0;
+  transition: left 0.35s ease;
+  overflow-y: auto;
+}
+.mobile-nav.open { left: 0; }
+
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid var(--borders);
+}
+.mobile-branding {
+  font-size: 1.3rem;
+  font-family: 'Vollkorn', serif;
+  color: var(--header-color);
+  font-weight: bold;
+}
+.mobile-nav-links {
+  list-style: none;
+  margin: 2rem 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-nav-links li {
+  padding: 0; margin: 0;
+}
+.mobile-nav-links a {
+  display: block;
+  padding: 0.8rem 1.5rem;
+  color: var(--header-color);
+  font-size: 1.17rem;
+  text-decoration: none;
+  font-family: 'Vollkorn', serif;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.mobile-nav-links a:hover,
+.mobile-nav-links li.active a {
+  background: var(--accent-color);
+  color: #fff !important; /* Ensures text is always visible */
+  outline: none;
+}
+
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1002;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.mobile-menu-overlay.open {
+  display: block;
+  opacity: 1;
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  font-size: 2.3rem;
+  line-height: 1;
+  color: var(--header-color);
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0.4rem 0.6rem;
+  transition: color 0.18s, background 0.18s;
+  border-radius: 6px;
+  z-index: 1100;
+}
+.mobile-menu-close:hover, .mobile-menu-close:focus {
+  color: #fff;
+  background: var(--accent-color);
+  outline: none;
+}
+
+/* =================================
+   MEDIA QUERIES FOR RESPONSIVENESS
+   ================================= */
+
+@media (max-width: 900px) {
+  .site-nav { display: none !important; }
+  .mobile-menu-toggle { display: block !important; }
+  main { padding: 2rem 1.5rem; }
+
+  .book-highlight-content, .about-portrait-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .book-cover img { max-width: 250px; margin: 0 auto; }
+  .about-portrait { max-width: 220px; margin: 0 auto; }
+
+  .book-info, .about-text { text-align: left; }
+  .book-info h2, .about-text h2, .book-info h3, .about-text h3 { text-align: center; }
+}
+
+@media (max-width: 767px) {
+  .hero h1 { font-size: 2.2rem; line-height: 1.2; }
+  .hero p { font-size: 1.1rem; }
+  main { padding: 2rem 1rem; }
+  .signup-section h2 { font-size: 1.8rem; }
+  .book-cover img { max-width: 18em; }
+  .about-portrait { max-width: 18em; }
+  .contact-banner-img { max-width: 20em; }
+  .blogpost-banner-img { max-width: 20em; }
+  .book-info {
+    padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+  }
+
+  .not-found-banner-img {
+    max-width: 20em;
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-nav, .mobile-menu-overlay { display: none !important; }
+}
