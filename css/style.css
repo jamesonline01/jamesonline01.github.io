@@ -1393,13 +1393,22 @@ footer {
   .book-cover img { max-width: 18em; }
   .about-portrait { max-width: 18em; }
   .contact-banner-img { max-width: 20em; }
-  .blogpost-banner-img { max-width: 20em; }
+  .blogpost-banner-img { 
+    max-width: 20em; 
+  }
   .book-info {
     padding: 1.2rem 1.2rem 1.2rem 1.2rem;
   }
 
   .not-found-banner-img {
     max-width: 20em;
+  }
+}
+
+/* It helps to center images in small screen size like S8+ for individual blog and story*/
+@media (max-width: 370px) {
+  .blogpost-banner-img { 
+    max-width: 18em; 
   }
 }
 
